@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.listen(8080, () => console.log('App listeningg!'));
+app.listen(8080, () => console.log('App listening!'));
 
 setInterval(() => {
   console.log('Docker hii!!!');
