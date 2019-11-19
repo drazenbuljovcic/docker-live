@@ -33,4 +33,7 @@ services:
 # docker-compose up --force-recreate --detach
 # docker-compose run --rm --detach --service-ports node bash
 
+# docker start docker-live
+# docker stop docker-live
+
 # docker container rm --force docker-live
