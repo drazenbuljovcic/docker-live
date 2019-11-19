@@ -3,4 +3,11 @@ const app = express();
 
 app.listen(8080, () => console.log('App listeningg!'));
 
-app.get('/', (req, res) => res.status(200).send('Nopee!'));
+setInterval(() => {
+  console.log('Docker hii!!!');
+}, 1000);
+
+app.get('/', (req, res) => {
+  console.log('Request!');
+  return res.status(200).send('Nopeeeee!');
+});

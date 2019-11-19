@@ -1,6 +1,7 @@
 version: "3"
 services:
   app:
+    container_name: docker-live
     image: node:latest
     volumes:
       - ./:/app
@@ -11,6 +12,15 @@ services:
       NODE_ENV: development
     ports:
       - 8080:8080
+      - 9229:9229/tcp
+    # ports:
+    #   - target: 9229
+    #     published: 9229
+    #     protocol: tcp
+    #     mode: host
+    #   - 8080:8080
+    expose:
+      - 9229
     command: npm run dev
   # mongo:
   #   image: mongo
@@ -18,3 +28,9 @@ services:
   #     - 27017
   #   volumes:
   #     - ./data/db:/data/db
+
+# docker-compose up --detach
+# docker-compose up --force-recreate --detach
+# docker-compose run --rm --detach --service-ports node bash
+
+# docker container rm --force docker-live
